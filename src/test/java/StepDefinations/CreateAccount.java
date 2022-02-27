@@ -60,7 +60,7 @@ public class CreateAccount extends CreateAccount_Page {
 	
 	@Then("Verify if email send message is displayed")
 	public void verify_if_email_send_message_is_displayed() {
-		WebDriverWait wait=new WebDriverWait(driver, 20);
+		WebDriverWait wait=new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(cap.get_message(driver)));
 		String message = cap.get_message(driver).getText();
 		String expected_message = "A welcome email has been sent. Please check your email.";
