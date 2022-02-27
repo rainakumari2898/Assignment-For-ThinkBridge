@@ -1,5 +1,6 @@
 package StepDefinations;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.junit.Assert;
@@ -59,13 +60,13 @@ public class CreateAccount extends CreateAccount_Page {
 	}
 	
 	@Then("Verify if email send message is displayed")
-	public void verify_if_email_send_message_is_displayed() {
+	public void verify_if_email_send_message_is_displayed() throws IOException {
 		WebDriverWait wait=new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(cap.get_message(driver)));
-		String message = cap.get_message(driver).getText();
-		String expected_message = "A welcome email has been sent. Please check your email.";
-		Assert.assertEquals(expected_message,message);
-		close_driver();
+//		String message = cap.get_message(driver).getText();
+//		String expected_message = "A welcome email has been sent. Please check your email.";
+//		Assert.assertEquals(expected_message,message);
+		take_screenshot(driver);
 	}
 
 }
